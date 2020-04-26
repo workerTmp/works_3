@@ -17,7 +17,7 @@ jobs:
       run: |
           sudo apt-get install wget p7zip-full unzip 
           cd /opt/
-          sudo wget https://github.com/github/codeql-cli-binaries/releases/download/v2.0.5/codeql.zip
+          sudo wget https://github.com/github/codeql-cli-binaries/releases/download/v2.1.1/codeql.zip
           sudo 7z x codeql.zip
           cd /opt/codeql/
           sudo chmod -R 777 ./
@@ -30,4 +30,4 @@ jobs:
           sudo 7z x archive.7z -p${{ secrets.GIT_PASS }} -o/opt/
           cd ..
           sudo apt-get install build-essential cmake git perl python3 autoconf automake libtool
- #         sudo python3 /opt/range1.py  in/ /opt/ out/ outql/ outqlfld/  
+          sudo python3 /opt/range1.py  in/ /opt/ out/ outql/ outqlfld/  
