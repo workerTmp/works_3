@@ -12,7 +12,6 @@ jobs:
       run: '(test -f in/*.rmoutqlfld && echo rmoutqlfld exists) ||  exit'    	
     - name: Create local changes
       run: |
-        sudo apt update -y
         sudo rm -rf outqlfld/
         mkdir outqlfld
         sudo echo "1123" >> outqlfld/tmp
