@@ -14,8 +14,9 @@ jobs:
       run: |
         sudo apt update -y
         sudo rm -rf outqlfld/
-        sudo mkdir outqlfld
+        mkdir outqlfld
         sudo echo "1123" >> outqlfld/tmp
+        sudo rm in/*.rmoutqlfld
         sudo git config  -local user.email "${GITHUB_ACTOR}@gmail.com"
         sudo git config --local user.name "${GITHUB_ACTOR}"
         sudo git remote -v
