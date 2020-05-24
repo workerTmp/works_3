@@ -12,6 +12,10 @@ jobs:
       run: '(test -f in/*.rmoutqlfld && echo rmoutqlfld exists) ||  exit'    	
     - name: Create local changes
       run: |
+        sudo swapoff -a
+        sudo rm -f /swapfile
+        sudo apt clean
+        docker rmi $(docker image ls -aq)
         sudo rm -rf outqlfld/
         mkdir outqlfld
         sudo echo "1123" >> outqlfld/tmp
